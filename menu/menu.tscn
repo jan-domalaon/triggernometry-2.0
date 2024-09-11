@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjhu88giawsrf"]
+
+[ext_resource type="Texture2D" uid="uid://pp2qfkushurm" path="res://menu/background.png" id="1_cg8td"]
+[ext_resource type="Texture2D" uid="uid://c068ha48l8bf4" path="res://menu/title.png" id="2_3moen"]
+
+[node name="menu" type="Container"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_cg8td")
+
+[node name="menu" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="title" type="TextureRect" parent="menu"]
+layout_mode = 2
+texture = ExtResource("2_3moen")
+
+[node name="btn_play" type="Button" parent="menu"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="btn_options" type="Button" parent="menu"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="btn_quit" type="Button" parent="menu"]
+layout_mode = 2
+text = "QUIT"
