@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b0or5yu5tyxeg"]
+
+[node name="GenericLevel" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="SpawnPoints" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
