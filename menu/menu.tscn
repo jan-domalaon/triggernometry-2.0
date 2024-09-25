@@ -1,10 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjhu88giawsrf"]
+[gd_scene load_steps=7 format=3 uid="uid://bjhu88giawsrf"]
 
 [ext_resource type="Texture2D" uid="uid://pp2qfkushurm" path="res://menu/background.png" id="1_cg8td"]
 [ext_resource type="Texture2D" uid="uid://c068ha48l8bf4" path="res://menu/title.png" id="2_3moen"]
 [ext_resource type="Script" path="res://menu/menu_main.gd" id="2_7n4x2"]
+[ext_resource type="Shader" path="res://menu/outline.gdshader" id="3_h0io8"]
+[ext_resource type="Theme" uid="uid://rdl72lvl3w8h" path="res://menu/menu_theme.tres" id="5_egdgb"]
 
-[sub_resource type="Theme" id="Theme_qcy4a"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrjhf"]
+shader = ExtResource("3_h0io8")
+shader_parameter/outline_color = null
+shader_parameter/progress = 1.0
+shader_parameter/width = 0.002
 
 [node name="menu" type="CenterContainer"]
 anchors_preset = 15
@@ -24,25 +30,34 @@ layout_mode = 2
 script = ExtResource("2_7n4x2")
 
 [node name="title" type="TextureRect" parent="menu"]
+material = SubResource("ShaderMaterial_yrjhf")
 layout_mode = 2
 texture = ExtResource("2_3moen")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="menu"]
+[node name="MarginContainer" type="MarginContainer" parent="menu"]
+layout_mode = 2
+theme = ExtResource("5_egdgb")
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu/MarginContainer"]
 layout_mode = 2
 
-[node name="btn_play" type="Button" parent="menu/VBoxContainer"]
+[node name="btn_play" type="Button" parent="menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_qcy4a")
+theme = ExtResource("5_egdgb")
 text = "PLAY"
 
-[node name="btn_options" type="Button" parent="menu/VBoxContainer"]
+[node name="btn_options" type="Button" parent="menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "OPTIONS"
 
-[node name="btn_quit" type="Button" parent="menu/VBoxContainer"]
+[node name="btn_quit" type="Button" parent="menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "QUIT"
 
-[connection signal="pressed" from="menu/VBoxContainer/btn_play" to="menu" method="_on_btn_play_pressed"]
-[connection signal="pressed" from="menu/VBoxContainer/btn_options" to="menu" method="_on_btn_options_pressed"]
-[connection signal="pressed" from="menu/VBoxContainer/btn_quit" to="menu" method="_on_btn_quit_pressed"]
+[connection signal="pressed" from="menu/MarginContainer/VBoxContainer/btn_play" to="menu" method="_on_btn_play_pressed"]
+[connection signal="pressed" from="menu/MarginContainer/VBoxContainer/btn_options" to="menu" method="_on_btn_options_pressed"]
+[connection signal="pressed" from="menu/MarginContainer/VBoxContainer/btn_quit" to="menu" method="_on_btn_quit_pressed"]
