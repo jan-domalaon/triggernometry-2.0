@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="TRIGGERNOMETRY 2.0"
+config/name="TRIGGERNOMETRY"
+config/version="2.0"
+run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.00392157, 0.0901961, 0.2, 1)
 boot_splash/image="res://title_splash_oxford_blue.png"
+boot_splash/use_filter=false
 config/icon="res://icon.png"
 
 [display]
@@ -76,5 +79,7 @@ p2_shoot={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=2
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.21436, 0.21436, 0.21436, 1)

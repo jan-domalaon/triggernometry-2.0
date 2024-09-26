@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://bv1wtd4wr45rd"]
+[gd_scene load_steps=5 format=3 uid="uid://bv1wtd4wr45rd"]
+
+[ext_resource type="Texture2D" uid="uid://pp2qfkushurm" path="res://menu/background.png" id="1_k4wf3"]
+[ext_resource type="Material" uid="uid://cldih1pogxrk0" path="res://menu/shader_outline.tres" id="2_tvxbk"]
+[ext_resource type="Theme" uid="uid://rdl72lvl3w8h" path="res://menu/menu_theme.tres" id="3_l5w6j"]
+[ext_resource type="FontFile" uid="uid://bvmewhg2fm8bm" path="res://menu/ChakraPetch-BoldItalic.ttf" id="4_235n0"]
 
 [node name="MenuOptions" type="Control"]
 layout_mode = 3
@@ -7,3 +12,61 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="."]
+texture = ExtResource("1_k4wf3")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="LabelTitle" type="Label" parent="CenterContainer/VBoxContainer"]
+material = ExtResource("2_tvxbk")
+layout_mode = 2
+theme = ExtResource("3_l5w6j")
+theme_override_fonts/font = ExtResource("4_235n0")
+theme_override_font_sizes/font_size = 72
+text = "OPTIONS"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VolumeMusic" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelMusic" type="Label" parent="CenterContainer/VBoxContainer/VolumeMusic"]
+layout_mode = 2
+theme = ExtResource("3_l5w6j")
+text = "Music Volume
+"
+
+[node name="SliderMusic" type="HSlider" parent="CenterContainer/VBoxContainer/VolumeMusic"]
+layout_mode = 2
+
+[node name="VolumeSFX" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelSFX" type="Label" parent="CenterContainer/VBoxContainer/VolumeSFX"]
+layout_mode = 2
+theme = ExtResource("3_l5w6j")
+text = "SFX Volume
+"
+
+[node name="SliderSFX" type="HSlider" parent="CenterContainer/VBoxContainer/VolumeSFX"]
+layout_mode = 2
+
+[node name="VideoFullScreen" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelFullScreen" type="Label" parent="CenterContainer/VBoxContainer/VideoFullScreen"]
+layout_mode = 2
+text = "Full Screen"
+
+[node name="Button" type="TextureButton" parent="CenterContainer/VBoxContainer/VideoFullScreen"]
+layout_mode = 2

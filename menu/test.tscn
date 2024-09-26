@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://kcipcp832ra6"]
+
+[ext_resource type="ButtonGroup" uid="uid://dhpfe8ietgbbc" path="res://menu/level_button_group.tres" id="1_lxhaa"]
+
+[node name="Control" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_lxhaa")
+text = "A"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_lxhaa")
+text = "B"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_lxhaa")
+text = "C"
+
+[node name="Button4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_lxhaa")
+text = "D"
+
+[node name="Button5" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_lxhaa")
+text = "E"

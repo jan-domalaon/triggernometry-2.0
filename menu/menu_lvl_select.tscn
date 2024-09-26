@@ -1,9 +1,225 @@
-[gd_scene format=3 uid="uid://dxbmuruf3t7j0"]
+[gd_scene load_steps=7 format=3 uid="uid://dxbmuruf3t7j0"]
 
-[node name="MenuLvlSelect" type="Control"]
+[ext_resource type="Texture2D" uid="uid://pp2qfkushurm" path="res://menu/background.png" id="1_d47c0"]
+[ext_resource type="Material" uid="uid://cldih1pogxrk0" path="res://menu/shader_outline.tres" id="2_dqknq"]
+[ext_resource type="Theme" uid="uid://rdl72lvl3w8h" path="res://menu/menu_theme.tres" id="2_vuner"]
+[ext_resource type="FontFile" uid="uid://bvmewhg2fm8bm" path="res://menu/ChakraPetch-BoldItalic.ttf" id="3_y8kn2"]
+[ext_resource type="Script" path="res://menu/lvl_panel.gd" id="5_w42fb"]
+[ext_resource type="ButtonGroup" uid="uid://dhpfe8ietgbbc" path="res://menu/level_button_group.tres" id="6_clluj"]
+
+[node name="menu_lvl_select" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 0
+texture = ExtResource("1_d47c0")
+
+[node name="center_container" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="center_container"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="LabelTitle" type="Label" parent="center_container/VBoxContainer"]
+material = ExtResource("2_dqknq")
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_fonts/font = ExtResource("3_y8kn2")
+theme_override_font_sizes/font_size = 72
+text = "LEVEL SELECTION"
+horizontal_alignment = 1
+
+[node name="1-3" type="HBoxContainer" parent="center_container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="Galactic" type="VBoxContainer" parent="center_container/VBoxContainer/1-3"]
+layout_mode = 2
+script = ExtResource("5_w42fb")
+level_name = "Galactic"
+
+[node name="LevelLabel" type="Label" parent="center_container/VBoxContainer/1-3/Galactic"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LevelPic" type="TextureRect" parent="center_container/VBoxContainer/1-3/Galactic"]
+layout_mode = 2
+
+[node name="SelectButton" type="Button" parent="center_container/VBoxContainer/1-3/Galactic"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("6_clluj")
+text = "SELECT"
+
+[node name="CyberCity" type="VBoxContainer" parent="center_container/VBoxContainer/1-3"]
+layout_mode = 2
+script = ExtResource("5_w42fb")
+level_name = "Cyber City"
+
+[node name="LevelLabel" type="Label" parent="center_container/VBoxContainer/1-3/CyberCity"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LevelPic" type="TextureRect" parent="center_container/VBoxContainer/1-3/CyberCity"]
+layout_mode = 2
+
+[node name="SelectButton" type="Button" parent="center_container/VBoxContainer/1-3/CyberCity"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("6_clluj")
+text = "SELECT"
+
+[node name="Mountains" type="VBoxContainer" parent="center_container/VBoxContainer/1-3"]
+layout_mode = 2
+script = ExtResource("5_w42fb")
+level_name = "Mountains"
+
+[node name="LevelLabel" type="Label" parent="center_container/VBoxContainer/1-3/Mountains"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LevelPic" type="TextureRect" parent="center_container/VBoxContainer/1-3/Mountains"]
+layout_mode = 2
+
+[node name="SelectButton" type="Button" parent="center_container/VBoxContainer/1-3/Mountains"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("6_clluj")
+text = "SELECT"
+
+[node name="4-6" type="HBoxContainer" parent="center_container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="Clouds" type="VBoxContainer" parent="center_container/VBoxContainer/4-6"]
+layout_mode = 2
+script = ExtResource("5_w42fb")
+level_name = "Clouds"
+
+[node name="LevelLabel" type="Label" parent="center_container/VBoxContainer/4-6/Clouds"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LevelPic" type="TextureRect" parent="center_container/VBoxContainer/4-6/Clouds"]
+layout_mode = 2
+
+[node name="SelectButton" type="Button" parent="center_container/VBoxContainer/4-6/Clouds"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("6_clluj")
+text = "SELECT"
+
+[node name="Gardens" type="VBoxContainer" parent="center_container/VBoxContainer/4-6"]
+layout_mode = 2
+script = ExtResource("5_w42fb")
+level_name = "Gardens"
+
+[node name="LevelLabel" type="Label" parent="center_container/VBoxContainer/4-6/Gardens"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LevelPic" type="TextureRect" parent="center_container/VBoxContainer/4-6/Gardens"]
+layout_mode = 2
+
+[node name="SelectButton" type="Button" parent="center_container/VBoxContainer/4-6/Gardens"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("6_clluj")
+text = "SELECT"
+
+[node name="Waterfall" type="VBoxContainer" parent="center_container/VBoxContainer/4-6"]
+layout_mode = 2
+script = ExtResource("5_w42fb")
+level_name = "Waterfalls"
+
+[node name="LevelLabel" type="Label" parent="center_container/VBoxContainer/4-6/Waterfall"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Level Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LevelPic" type="TextureRect" parent="center_container/VBoxContainer/4-6/Waterfall"]
+layout_mode = 2
+
+[node name="SelectButton" type="Button" parent="center_container/VBoxContainer/4-6/Waterfall"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("6_clluj")
+text = "SELECT"
+
+[node name="MarginContainer" type="MarginContainer" parent="center_container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 84
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PlayButton" type="Button" parent="center_container/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_vuner")
+theme_override_font_sizes/font_size = 36
+text = "PLAY SELECTED LEVEL"

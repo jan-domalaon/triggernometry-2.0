@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cldih1pogxrk0"]
+
+[ext_resource type="Shader" path="res://menu/outline.gdshader" id="1_p8jos"]
+
+[resource]
+shader = ExtResource("1_p8jos")
+shader_parameter/outline_color = null
+shader_parameter/progress = 1.0
+shader_parameter/width = 0.002
