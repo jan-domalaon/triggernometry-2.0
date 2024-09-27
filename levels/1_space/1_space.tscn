@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://77fj1xcbn2vb"]
+[gd_scene load_steps=2 format=3 uid="uid://77fj1xcbn2vb"]
+
+[ext_resource type="Texture2D" uid="uid://dhjo5654ik48p" path="res://levels/1_space/bg.png" id="1_sdrr7"]
 
 [node name="GenericLevel" type="Node"]
 
@@ -15,3 +17,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_sdrr7")
+stretch_mode = 3
