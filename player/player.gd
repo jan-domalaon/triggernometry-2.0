@@ -8,6 +8,7 @@ const GRAVITY = 800
 var direction : float
 
 @export var player_number : int = 1
+@export var player_hp : int = 5
 
 func _ready() -> void:
 	if player_number == 1:

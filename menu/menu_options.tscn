@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv1wtd4wr45rd"]
 
 [ext_resource type="Texture2D" uid="uid://pp2qfkushurm" path="res://menu/background.png" id="1_k4wf3"]
-[ext_resource type="Material" uid="uid://cldih1pogxrk0" path="res://menu/shader_outline.tres" id="2_tvxbk"]
+[ext_resource type="Material" uid="uid://cldih1pogxrk0" path="res://shaders/shader_outline.tres" id="2_tvxbk"]
 [ext_resource type="Theme" uid="uid://rdl72lvl3w8h" path="res://menu/menu_theme.tres" id="3_l5w6j"]
 [ext_resource type="FontFile" uid="uid://bvmewhg2fm8bm" path="res://menu/ChakraPetch-BoldItalic.ttf" id="4_235n0"]
 
@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="bg" type="TextureRect" parent="."]
+layout_mode = 0
 texture = ExtResource("1_k4wf3")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]

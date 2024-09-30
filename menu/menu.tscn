@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://pp2qfkushurm" path="res://menu/background.png" id="1_cg8td"]
 [ext_resource type="Texture2D" uid="uid://c068ha48l8bf4" path="res://menu/title.png" id="2_3moen"]
 [ext_resource type="Script" path="res://menu/menu_main.gd" id="2_7n4x2"]
-[ext_resource type="Material" uid="uid://cldih1pogxrk0" path="res://menu/shader_outline.tres" id="3_hnskh"]
+[ext_resource type="Material" uid="uid://cldih1pogxrk0" path="res://shaders/shader_outline.tres" id="3_hnskh"]
 [ext_resource type="Theme" uid="uid://rdl72lvl3w8h" path="res://menu/menu_theme.tres" id="5_egdgb"]
 
 [node name="menu" type="CenterContainer"]
