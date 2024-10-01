@@ -14,9 +14,11 @@ var targets = []  # Array of targets to be tracked.
 
 @onready var screen_size = get_viewport_rect().size
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	for spawn_pt in get_parent().get_node("SpawnPoints").get_children():
+		pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,6 +46,7 @@ func _process(delta):
 func add_target(t):
 	if not t in targets:
 		targets.append(t)
+
 
 func remove_target(t):
 	if t in targets:

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0or5yu5tyxeg"]
+[gd_scene load_steps=3 format=3 uid="uid://b0or5yu5tyxeg"]
 
+[ext_resource type="Script" path="res://levels/game.gd" id="1_10y1j"]
 [ext_resource type="Script" path="res://levels/game_camera.gd" id="1_cnh7v"]
 
 [node name="GenericLevel" type="Node"]
+script = ExtResource("1_10y1j")
 
 [node name="BG" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -13,11 +15,13 @@ grow_vertical = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="MultiTargetCamera" type="Camera2D" parent="."]
 script = ExtResource("1_cnh7v")
 
-[node name="SpawnPoints" type="Node" parent="."]
+[node name="SpawnPtsInit" type="Node" parent="."]
 
-[node name="SpawnP1" type="Marker2D" parent="SpawnPoints"]
+[node name="SpawnP1" type="Marker2D" parent="SpawnPtsInit" groups=["SpawnPtInit"]]
 
-[node name="SpawnP2" type="Marker2D" parent="SpawnPoints"]
+[node name="SpawnP2" type="Marker2D" parent="SpawnPtsInit" groups=["SpawnPtInit"]]
+
+[node name="SpawnPts" type="Node" parent="."]
