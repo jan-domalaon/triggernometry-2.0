@@ -1,0 +1,7 @@
+{
+  "name": "fiesta",
+  "limited_shots": false,
+  "lives": 5,
+  "hp_count": 5,
+  "item_spawns": true
+}

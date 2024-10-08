@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://77fj1xcbn2vb"]
 
 [ext_resource type="Texture2D" uid="uid://17n157krq2p5" path="res://levels/1_space/tileset_space_cropped.png" id="1_0qh4t"]
-[ext_resource type="Script" path="res://levels/game.gd" id="1_5nfe7"]
 [ext_resource type="Texture2D" uid="uid://dhjo5654ik48p" path="res://levels/1_space/bg.png" id="1_sdrr7"]
+[ext_resource type="Script" path="res://levels/game_level.gd" id="1_soybr"]
 [ext_resource type="Script" path="res://levels/game_camera.gd" id="3_vdt06"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mik6v"]
@@ -1499,7 +1499,7 @@ texture = ExtResource("1_0qh4t")
 sources/1 = SubResource("TileSetAtlasSource_mik6v")
 
 [node name="LevelSpace" type="Node"]
-script = ExtResource("1_5nfe7")
+script = ExtResource("1_soybr")
 
 [node name="BG" type="TextureRect" parent="."]
 anchors_preset = 15

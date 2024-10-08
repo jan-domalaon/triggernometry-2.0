@@ -1,0 +1,199 @@
+[gd_scene load_steps=7 format=3 uid="uid://b414e4f3voxw"]
+
+[ext_resource type="Script" path="res://menu/menu_game_mode.gd" id="1_c7ert"]
+[ext_resource type="Texture2D" uid="uid://pp2qfkushurm" path="res://menu/background.png" id="1_updd4"]
+[ext_resource type="Material" uid="uid://cldih1pogxrk0" path="res://shaders/shader_outline.tres" id="2_nc11p"]
+[ext_resource type="Theme" uid="uid://rdl72lvl3w8h" path="res://menu/menu_theme.tres" id="3_hanb3"]
+[ext_resource type="FontFile" uid="uid://bvmewhg2fm8bm" path="res://menu/ChakraPetch-BoldItalic.ttf" id="4_5vlwy"]
+[ext_resource type="ButtonGroup" uid="uid://dhpfe8ietgbbc" path="res://menu/level_button_group.tres" id="7_aji4p"]
+
+[node name="menu_lvl_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c7ert")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_updd4")
+
+[node name="center_container" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="center_container"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="LabelTitle" type="Label" parent="center_container/VBoxContainer"]
+material = ExtResource("2_nc11p")
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+theme_override_fonts/font = ExtResource("4_5vlwy")
+theme_override_font_sizes/font_size = 72
+text = "GAME MODE"
+horizontal_alignment = 1
+
+[node name="1-3" type="HBoxContainer" parent="center_container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="Classic" type="VBoxContainer" parent="center_container/VBoxContainer/1-3"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="GameModeLabel" type="Label" parent="center_container/VBoxContainer/1-3/Classic"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Classic"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Desc" type="RichTextLabel" parent="center_container/VBoxContainer/1-3/Classic"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+text = "- Limited shots
+- 3 Lives
+- 3 HP Count
+- No Item spawns"
+fit_content = true
+autowrap_mode = 0
+
+[node name="SelectClassic" type="Button" parent="center_container/VBoxContainer/1-3/Classic"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("7_aji4p")
+text = "SELECT"
+
+[node name="Fiesta" type="VBoxContainer" parent="center_container/VBoxContainer/1-3"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="GameModeLabel" type="Label" parent="center_container/VBoxContainer/1-3/Fiesta"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Fiesta"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Desc" type="RichTextLabel" parent="center_container/VBoxContainer/1-3/Fiesta"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+text = "- Unlimited shots
+- 5 lives
+- 5 HP Count
+- Item spawning"
+fit_content = true
+autowrap_mode = 0
+
+[node name="SelectFiesta" type="Button" parent="center_container/VBoxContainer/1-3/Fiesta"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("7_aji4p")
+text = "SELECT"
+
+[node name="Custom" type="VBoxContainer" parent="center_container/VBoxContainer/1-3"]
+visible = false
+layout_mode = 2
+
+[node name="GameModeLabel" type="Label" parent="center_container/VBoxContainer/1-3/Custom"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+theme_override_colors/font_color = Color(0.956863, 0.635294, 0.34902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Custom"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBox" type="VBoxContainer" parent="center_container/VBoxContainer/1-3/Custom"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="center_container/VBoxContainer/1-3/Custom/VBox"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+text = "Limited Shots?"
+
+[node name="CheckButton2" type="CheckButton" parent="center_container/VBoxContainer/1-3/Custom/VBox"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+text = "Item Spawning?"
+
+[node name="LifeCountCont" type="HBoxContainer" parent="center_container/VBoxContainer/1-3/Custom/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="center_container/VBoxContainer/1-3/Custom/VBox/LifeCountCont"]
+layout_mode = 2
+text = "Life Count = "
+
+[node name="TextEdit" type="LineEdit" parent="center_container/VBoxContainer/1-3/Custom/VBox/LifeCountCont"]
+layout_mode = 2
+placeholder_text = "# of lives"
+expand_to_text_length = true
+
+[node name="HPCountCont" type="HBoxContainer" parent="center_container/VBoxContainer/1-3/Custom/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="center_container/VBoxContainer/1-3/Custom/VBox/HPCountCont"]
+layout_mode = 2
+text = "HP Count = "
+
+[node name="TextEdit2" type="LineEdit" parent="center_container/VBoxContainer/1-3/Custom/VBox/HPCountCont"]
+layout_mode = 2
+placeholder_text = "# of HP"
+expand_to_text_length = true
+
+[node name="SelectCustom" type="Button" parent="center_container/VBoxContainer/1-3/Custom"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+theme_override_colors/font_color = Color(0.8974, 0.8974, 0.8974, 1)
+toggle_mode = true
+button_group = ExtResource("7_aji4p")
+text = "SELECT"
+
+[node name="MarginContainer" type="MarginContainer" parent="center_container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 84
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PlayButton" type="Button" parent="center_container/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_hanb3")
+theme_override_font_sizes/font_size = 36
+disabled = true
+text = "PLAY"
+
+[connection signal="pressed" from="center_container/VBoxContainer/1-3/Classic/SelectClassic" to="." method="_on_select_classic_pressed"]
+[connection signal="pressed" from="center_container/VBoxContainer/1-3/Fiesta/SelectFiesta" to="." method="_on_select_fiesta_pressed"]
+[connection signal="pressed" from="center_container/VBoxContainer/MarginContainer/PlayButton" to="." method="_on_play_button_pressed"]

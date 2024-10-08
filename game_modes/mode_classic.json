@@ -1,0 +1,7 @@
+{
+  "name": "classic",
+  "limited_shots": true,
+  "lives": 3,
+  "hp_count": 3,
+  "item_spawns": false
+}

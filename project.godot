@@ -19,6 +19,10 @@ boot_splash/image="res://title_splash_oxford_blue.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
+[autoload]
+
+Game="*res://singleton_game.gd"
+
 [display]
 
 window/size/viewport_width=1600
